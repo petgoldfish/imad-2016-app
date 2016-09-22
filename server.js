@@ -80,10 +80,17 @@ app.get('/counter', function(req, res) {
 });
 
 var names = [];
+<<<<<<< HEAD
 app.get('/submit-name', function(req, res) {
   // GEt name from req
   var name;
   names.push(req.query.name);
+=======
+app.get('/submit-name/:name', function(req, res) {
+  // GEt name from req
+  var name;
+  names.push(req.params.name);
+>>>>>>> 36e98da02bf2a76333d55d2b5c8f14feda0d9bd9
   // JSON time
   res.send(JSON.stringify(names));
 });
