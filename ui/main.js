@@ -16,7 +16,7 @@ button.onclick = function () {
 		}
 	};
 	// Make a request
-	request.open('GET', 'http://petgoldfish.imad.hasura-app.io/counter', true);
+	request.open('GET', 'http://127.0.0.1:8080/counter', true);
 	request.send(null);
 };
 
@@ -46,6 +46,6 @@ submit.onclick = function () {
 	var nameInput = document.getElementById('name');
 	var name = nameInput.value;
 	// Make a request
-	request.open('GET', 'http://petgoldfish.imad.hasura-app.io/submit-name?name=' + name, true);
+	request.open('GET', 'http://127.0.0.1:8080/submit-name?name=' + name, true);
 	request.send(null);
 }; 
