@@ -1,17 +1,21 @@
-console.log('Loaded!');
+// Counter code
+var button = document.getElementById('counter');
 
-// change the main text element
-var element = document.getElementById('main-text');
+button.onclick = function () {
 
-element.innerHTML = 'New Value'
-
-// change the pic to jump on mouse click
-var imgelement = document.getElementById('madi');
-var marginleft = 0;
-imgelement.onclick = function() {
-    function moveRight() {
-        marginleft = marginleft + 1;
-        imgelement.style.marginLeft = marginleft + 'px';
-    }
-    var interval = setInterval(moveRight, 50);
-}
+	// Create request
+	var request = new XMLHttpRequest
+	// Capture response into a var
+	request.onreadystatechange = function() {
+		if(request.readyState === XMLHttpRequest.DONE) {
+			if(request.status === 200) {
+				var counter = request.responseText;
+				var span = document.getElementById('count');
+				span.innerHTML = counter.toString();
+			}
+		}
+	};
+	// Make a request
+	request.open('GET', 'http://petgoldfish.imad.hasura-app.io/counter', true);
+	request.send(null);
+};
