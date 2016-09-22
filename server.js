@@ -79,6 +79,15 @@ app.get('/counter', function(req, res) {
   res.send(counter.toString());
 });
 
+var names = [];
+app.get('/submit-name/:name', function(req, res) {
+  // GEt name from req
+  var name;
+  names.push(req.params.name);
+  // JSON time
+  res.send(JSON.stringify(names));
+});
+
 app.get('/ui/style.css', function(req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
