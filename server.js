@@ -13,36 +13,6 @@ var config = {
 var app = express();
 app.use(morgan('combined'));
 
-var articles = {
-  'article-one': {
-    title: 'Article One! Raghav Sai',
-    heading: 'Article One',
-    date: 'Sep 5, 2016',
-    content: `
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, eligendi.
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, eligendi.
-              </p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id cupiditate ipsam at, voluptate ex neque. Quis culpa necessitatibus numquam? Reiciendis.
-              </p>`
-  },
-  'article-two': {
-    title: 'Article Two! Raghav Sai',
-    heading: 'Article Two',
-    date: 'Sep 5, 2016',
-    content: `
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat provident, deserunt, et quaerat perspiciatis mollitia possimus! Laboriosam nobis ipsa quis quo numquam, tenetur veniam quaerat blanditiis, cupiditate dicta est earum pariatur. Optio minima at perferendis maiores consequuntur ad aut perspiciatis omnis qui, vero, autem minus illum beatae vitae eum delectus!</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam nesciunt nulla incidunt iusto consectetur beatae sapiente ipsum tenetur, vero numquam.</p>`
-  },
-  'article-three': {
-    title: 'Article Three! Raghav Sai',
-    heading: 'Article Three',
-    date: 'Sep 6, 2016',
-    content: `
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet id quia commodi nisi aliquam iusto architecto nemo in quis voluptatem!</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam assumenda voluptates beatae mollitia exercitationem vel ab ad et minima, fuga laborum, illum id cupiditate veniam vitae delectus nesciunt debitis magni.</p>`
-  }
-};
-
 function createTemplate(data) {
   var title = data.title;
   var date = data.date;
